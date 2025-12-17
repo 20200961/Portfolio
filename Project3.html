@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>짐허브 - 프로젝트</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         * {
             margin: 0;
@@ -16,160 +15,319 @@
             background: white;
             overflow-x: hidden;
         }
+        .container {
+            max-width: 1014px;
+            margin: 0 auto;
+            background: white;
+        }
+        
+        /* Header Section */
+        .header-section {
+            background: #f9fafb;
+            height: 314px;
+            padding: 48px 59px;
+        }
+        .back-button {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #6a7282;
+            font-size: 16px;
+            text-decoration: none;
+            margin-bottom: 32px;
+            cursor: pointer;
+        }
+        .back-button:hover {
+            color: #101828;
+        }
+        .project-category {
+            display: inline-block;
+            background: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            color: #6a7282;
+            font-size: 16px;
+            margin-bottom: 32px;
+        }
+        .project-title {
+            font-size: 40px;
+            color: #101828;
+            line-height: 60px;
+            margin-bottom: 16px;
+        }
+        .project-subtitle {
+            font-size: 20px;
+            color: #4a5565;
+            line-height: 30px;
+        }
+        
+        /* Content Section */
+        .content-section {
+            padding: 64px 59px 100px;
+        }
+        .project-image-container {
+            width: 100%;
+            max-width: 896px;
+            height: 400px;
+            background: #e5e7eb;
+            border-radius: 14px;
+            margin: 0 auto 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .image-placeholder {
+            text-align: center;
+            color: #6a7282;
+        }
+        .image-placeholder svg {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 16px;
+        }
+        
+        /* Project Info Grid */
+        .project-info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-bottom: 64px;
+        }
+        .info-item {
+            display: flex;
+            gap: 12px;
+        }
+        .info-icon {
+            width: 44px;
+            height: 44px;
+            background: #f9fafb;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .info-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+        .info-content h3 {
+            font-size: 16px;
+            color: #101828;
+            margin-bottom: 4px;
+        }
+        .info-content p {
+            font-size: 16px;
+            color: #6a7282;
+            line-height: 1.5;
+        }
+        
+        /* Section */
+        .section {
+            margin-bottom: 64px;
+        }
+        .section-title {
+            font-size: 24px;
+            color: #101828;
+            line-height: 36px;
+            margin-bottom: 24px;
+        }
+        .section-text {
+            font-size: 16px;
+            color: #4a5565;
+            line-height: 26px;
+        }
+        
+        /* Features List */
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .feature-item {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .feature-number {
+            width: 24px;
+            height: 24px;
+            background: #101828;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+        .feature-text {
+            font-size: 16px;
+            color: #101828;
+            line-height: 24px;
+        }
+        
+        /* Tech Stack */
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .tech-tag {
+            background: #101828;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 10px;
+            font-size: 16px;
+            line-height: 24px;
+        }
+        
+        /* GitHub Button */
+        .github-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #101828;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 16px;
+            line-height: 24px;
+            transition: background 0.2s;
+        }
+        .github-button:hover {
+            background: #2d3748;
+        }
     </style>
 </head>
 <body>
-    <!-- Header Container -->
-    <div style="background: #f9fafb; height: 314px; position: relative; width: 100%;">
-        <!-- Back Button -->
-        <div style="position: absolute; left: 59px; top: 48px; display: flex; align-items: center; gap: 8px;">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M15.8333 10H4.16667M4.16667 10L10 15.8333M4.16667 10L10 4.16667" stroke="#6A7282" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <p style="color: #6a7282; font-size: 16px; line-height: 24px;">돌아가기</p>
-        </div>
-
-        <!-- Tag -->
-        <div style="position: absolute; left: 59px; top: 104px; background: white; border-radius: 20px; padding: 6px 16px;">
-            <p style="color: #6a7282; font-size: 16px; line-height: 24px;">FullStack</p>
-        </div>
-
-        <!-- Heading -->
-        <div style="position: absolute; left: 59px; top: 160px;">
-            <p style="color: #101828; font-size: 40px; line-height: 60px;">짐허브</p>
-        </div>
-
-        <!-- Subtitle -->
-        <div style="position: absolute; left: 59px; top: 236px;">
-            <p style="color: #4a5565; font-size: 20px; line-height: 30px;">헬스장 운영자와 회원을 위한 관리 웹 플랫폼</p>
-        </div>
-    </div>
-
-    <!-- Main Content Container -->
-    <div style="position: relative; padding: 0 59px; margin-top: 64px;">
-        
-        <!-- Project Image -->
-        <div style="background: #e5e7eb; border-radius: 14px; height: 400px; margin-bottom: 48px; display: flex; align-items: center; justify-content: center; position: relative;">
-            <div style="text-align: center;">
-                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" style="margin: 0 auto 16px;">
-                    <path d="M56 26.6667V37.3333C56 48 48 56 37.3333 56H26.6667C16 56 8 48 8 37.3333V26.6667C8 16 16 8 26.6667 8H37.3333C48 8 56 16 56 26.6667Z" stroke="#6A7282" stroke-width="5.33333" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M22.6667 29.3333L32 38.6667L45.3333 25.3333" stroke="#6A7282" stroke-width="5.33333" stroke-linecap="round" stroke-linejoin="round"/>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header-section">
+            <a href="index.html" class="back-button">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M15.8333 10H4.16667M4.16667 10L10 15.8333M4.16667 10L10 4.16667" stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                <p style="color: #6a7282; font-size: 16px; line-height: 24px;">프로젝트 이미지</p>
-            </div>
+                돌아가기
+            </a>
+            <div class="project-category">FullStack</div>
+            <h1 class="project-title">짐허브</h1>
+            <p class="project-subtitle">헬스장 운영자와 회원을 위한 관리 웹 플랫폼</p>
         </div>
 
-        <!-- Project Info Grid -->
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-bottom: 64px;">
-            <!-- 프로젝트 기간 -->
-            <div style="display: flex; gap: 12px;">
-                <div style="background: #f9fafb; border-radius: 10px; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path d="M6.66667 1.66667V4.16667M13.3333 1.66667V4.16667M2.91667 7.575H17.0833M17.5 7.08333V14.1667C17.5 16.6667 16.25 18.3333 13.3333 18.3333H6.66667C3.75 18.3333 2.5 16.6667 2.5 14.1667V7.08333C2.5 4.58333 3.75 2.91667 6.66667 2.91667H13.3333C16.25 2.91667 17.5 4.58333 17.5 7.08333Z" stroke="#101828" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M13.0787 11.4167H13.0862M13.0787 13.9167H13.0862M9.99623 11.4167H10.0037M9.99623 13.9167H10.0037M6.91209 11.4167H6.91957M6.91209 13.9167H6.91957" stroke="#101828" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Content Section -->
+        <div class="content-section">
+            <!-- Project Image -->
+            <div class="project-image-container">
+                <div class="image-placeholder">
+                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                        <path d="M56 26.6667V37.3333C56 48 48 56 37.3333 56H26.6667C16 56 8 48 8 37.3333V26.6667C8 16 16 8 26.6667 8H37.3333C48 8 56 16 56 26.6667Z" stroke="#6A7282" stroke-width="5.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M22.6667 29.3333L32 38.6667L45.3333 25.3333" stroke="#6A7282" stroke-width="5.33333" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                </div>
-                <div>
-                    <p style="color: #101828; font-size: 16px; line-height: 24px; margin-bottom: 4px;">프로젝트 기간</p>
-                    <p style="color: #6a7282; font-size: 16px; line-height: 24px;">2025.10 - 2024.11 (1개월)</p>
+                    <p>프로젝트 이미지</p>
                 </div>
             </div>
 
-            <!-- 팀 구성 -->
-            <div style="display: flex; gap: 12px;">
-                <div style="background: #f9fafb; border-radius: 10px; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path d="M7.63333 9.05833C7.55 9.05 7.45 9.05 7.35833 9.05833C5.375 8.99167 3.8 7.36667 3.8 5.36667C3.8 3.325 5.45 1.66667 7.5 1.66667C9.54167 1.66667 11.2 3.325 11.2 5.36667C11.1917 7.36667 9.61667 8.99167 7.63333 9.05833Z" stroke="#101828" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M13.675 3.33333C15.2917 3.33333 16.5917 4.64167 16.5917 6.25C16.5917 7.825 15.3417 9.10833 13.7833 9.16667C13.7167 9.15833 13.6417 9.15833 13.5667 9.16667" stroke="#101828" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M3.46667 12.1333C1.45 13.4833 1.45 15.6833 3.46667 17.025C5.75833 18.5583 9.51667 18.5583 11.8083 17.025C13.825 15.675 13.825 13.475 11.8083 12.1333C9.525 10.6083 5.76667 10.6083 3.46667 12.1333Z" stroke="#101828" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M15.2833 16.6667C15.8833 16.5417 16.45 16.3 16.9167 15.9417C18.2167 14.9667 18.2167 13.3583 16.9167 12.3833C16.4583 12.0333 15.9 11.8 15.3083 11.6667" stroke="#101828" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <div>
-                    <p style="color: #101828; font-size: 16px; line-height: 24px; margin-bottom: 4px;">팀 구성</p>
-                    <p style="color: #6a7282; font-size: 16px; line-height: 24px;">풀스택 5명</p>
-                </div>
-            </div>
-
-            <!-- 담당 역할 -->
-            <div style="display: flex; gap: 12px;">
-                <div style="background: #f9fafb; border-radius: 10px; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path d="M5 10H15M5 5H15M5 15H11.6667" stroke="#101828" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <div>
-                    <p style="color: #101828; font-size: 16px; line-height: 24px; margin-bottom: 4px;">담당 역할</p>
-                    <p style="color: #6a7282; font-size: 16px; line-height: 24px;">풀스택 개발 - 전체 시스템 설계, 백엔드 및 프론트엔드 구현</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- 프로젝트 소개 -->
-        <div style="margin-bottom: 64px;">
-            <h2 style="color: #101828; font-size: 24px; line-height: 36px; margin-bottom: 24px;">프로젝트 소개</h2>
-            <div style="color: #4a5565; font-size: 16px; line-height: 26px;">
-                <p>짐허브는 헬스장 운영자와 회원 모두를 위한 통합 관리 플랫폼입니다.</p>
-                <p>&nbsp;</p>
-                <p>운영자는 회원 관리, 수강권 관리, 출석 체크, 매출 통계 등을 효율적으로 관리할 수 있으며, 회원들은 자신의 운동 기록, 수강권 정보, PT 일정 등을 한눈에 확인할 수 있습니다.</p>
-                <p>&nbsp;</p>
-                <p>복잡한 헬스장 운영 업무를 자동화하고 디지털화하여 운영 효율성을 크게 향상시켰습니다.</p>
-            </div>
-        </div>
-
-        <!-- 주요 기능 -->
-        <div style="margin-bottom: 64px;">
-            <h2 style="color: #101828; font-size: 24px; line-height: 36px; margin-bottom: 24px;">주요 기능</h2>
-            <div style="display: flex; flex-direction: column; gap: 16px;">
-                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 10px; padding: 25px;">
-                    <div style="display: flex; align-items: center; gap: 11px;">
-                        <div style="background: #101828; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px;">1</div>
-                        <p style="color: #101828; font-size: 16px; line-height: 24px;">회원 및 수강권 통합 관리 시스템</p>
+            <!-- Project Info Grid -->
+            <div class="project-info-grid">
+                <div class="info-item">
+                    <div class="info-icon">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M6.66667 1.66667V4.16667M13.3333 1.66667V4.16667M2.91667 7.575H17.0833M17.5 7.08333V14.1667C17.5 16.6667 16.25 18.3333 13.3333 18.3333H6.66667C3.75 18.3333 2.5 16.6667 2.5 14.1667V7.08333C2.5 4.58333 3.75 2.91667 6.66667 2.91667H13.3333C16.25 2.91667 17.5 4.58333 17.5 7.08333Z" stroke="#101828" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M13.0787 11.4167H13.0862M13.0787 13.9167H13.0862M9.99623 11.4167H10.0037M9.99623 13.9167H10.0037M6.91209 11.4167H6.91957M6.91209 13.9167H6.91957" stroke="#101828" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="info-content">
+                        <h3>프로젝트 기간</h3>
+                        <p>2024.10 - 2024.11 (1개월)</p>
                     </div>
                 </div>
-                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 10px; padding: 25px;">
-                    <div style="display: flex; align-items: center; gap: 11px;">
-                        <div style="background: #101828; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px;">2</div>
-                        <p style="color: #101828; font-size: 16px; line-height: 24px;">출석체크 기능을 활용한 실시간 혼잡도 및 회원 관리</p>
+                <div class="info-item">
+                    <div class="info-icon">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7.63333 9.05833C7.55 9.05 7.45 9.05 7.35833 9.05833C5.375 8.99167 3.8 7.36667 3.8 5.36667C3.8 3.325 5.45 1.66667 7.5 1.66667C9.54167 1.66667 11.2 3.325 11.2 5.36667C11.1917 7.36667 9.61667 8.99167 7.63333 9.05833Z" stroke="#101828" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M13.675 3.33333C15.2917 3.33333 16.5917 4.64167 16.5917 6.25C16.5917 7.825 15.3417 9.10833 13.7833 9.16667C13.7167 9.15833 13.6417 9.15833 13.5667 9.16667" stroke="#101828" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3.46667 12.1333C1.45 13.4833 1.45 15.6833 3.46667 17.025C5.75833 18.5583 9.51667 18.5583 11.8083 17.025C13.825 15.675 13.825 13.475 11.8083 12.1333C9.525 10.6083 5.76667 10.6083 3.46667 12.1333Z" stroke="#101828" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M15.2833 16.6667C15.8833 16.5417 16.45 16.3 16.9167 15.9417C18.2167 14.9667 18.2167 13.3583 16.9167 12.3833C16.4583 12.0333 15.9 11.8 15.3083 11.6667" stroke="#101828" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="info-content">
+                        <h3>팀 구성</h3>
+                        <p>풀스택 5명</p>
                     </div>
                 </div>
-                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 10px; padding: 25px;">
-                    <div style="display: flex; align-items: center; gap: 11px;">
-                        <div style="background: #101828; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px;">3</div>
-                        <p style="color: #101828; font-size: 16px; line-height: 24px;">실시간 매출 및 회원 통계 대시보드</p>
+                <div class="info-item">
+                    <div class="info-icon">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M5 10H15M5 5H15M5 15H11.6667" stroke="#101828" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                     </div>
-                </div>
-                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 10px; padding: 25px;">
-                    <div style="display: flex; align-items: center; gap: 11px;">
-                        <div style="background: #101828; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px;">4</div>
-                        <p style="color: #101828; font-size: 16px; line-height: 24px;">PT 일정 관리 및 예약 시스템</p>
-                    </div>
-                </div>
-                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 10px; padding: 25px;">
-                    <div style="display: flex; align-items: center; gap: 11px;">
-                        <div style="background: #101828; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px;">5</div>
-                        <p style="color: #101828; font-size: 16px; line-height: 24px;">회원별 운동 기록 및 인바디 데이터 관리</p>
+                    <div class="info-content">
+                        <h3>담당 역할</h3>
+                        <p>풀스택 개발 - 전체 시스템 설계,<br>백엔드 및 프론트엔드 구현</p>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- 기술 스택 -->
-        <div style="margin-bottom: 64px;">
-            <h2 style="color: #101828; font-size: 24px; line-height: 36px; margin-bottom: 24px;">기술 스택</h2>
-            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                <div style="background: #101828; color: white; padding: 8px 21px; border-radius: 10px; font-size: 16px; line-height: 24px;">JSP</div>
-                <div style="background: #101828; color: white; padding: 8px 21px; border-radius: 10px; font-size: 16px; line-height: 24px;">Java</div>
-                <div style="background: #101828; color: white; padding: 8px 18px; border-radius: 10px; font-size: 16px; line-height: 24px;">Oracle</div>
-                <div style="background: #101828; color: white; padding: 8px 19px; border-radius: 10px; font-size: 16px; line-height: 24px;">Apache Tomcat</div>
-                <div style="background: #101828; color: white; padding: 8px 22px; border-radius: 10px; font-size: 16px; line-height: 24px;">Spring Boot</div>
-                <div style="background: #101828; color: white; padding: 8px 22px; border-radius: 10px; font-size: 16px; line-height: 24px;">Mybatis</div>
+            <!-- Project Introduction -->
+            <div class="section">
+                <h2 class="section-title">프로젝트 소개</h2>
+                <div class="section-text">
+                    <p>짐허브는 헬스장 운영자와 회원 모두를 위한 통합 관리 플랫폼입니다.</p>
+                    <br>
+                    <p>운영자는 회원 관리, 수강권 관리, 출석 체크, 매출 통계 등을 효율적으로 관리할 수 있으며, 회원들은 자신의 운동 기록, 수강권 정보, PT 일정 등을 한눈에 확인할 수 있습니다.</p>
+                    <br>
+                    <p>복잡한 헬스장 운영 업무를 자동화하고 디지털화하여 운영 효율성을 크게 향상시켰습니다.</p>
+                </div>
             </div>
-        </div>
 
-        <!-- GitHub Link -->
-        <div style="margin-bottom: 64px;">
-            <a href="#" style="background: #101828; color: white; padding: 12px 24px; border-radius: 10px; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-size: 16px; line-height: 24px;">
+            <!-- Key Features -->
+            <div class="section">
+                <h2 class="section-title">주요 기능</h2>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="feature-number">1</div>
+                        <div class="feature-text">회원 및 수강권 통합 관리 시스템</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-number">2</div>
+                        <div class="feature-text">출석체크 기능을 활용한 실시간 혼잡도 및 회원 관리</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-number">3</div>
+                        <div class="feature-text">실시간 매출 및 회원 통계 대시보드</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-number">4</div>
+                        <div class="feature-text">PT 일정 관리 및 예약 시스템</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-number">5</div>
+                        <div class="feature-text">회원별 운동 기록 및 인바디 데이터 관리</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tech Stack -->
+            <div class="section">
+                <h2 class="section-title">기술 스택</h2>
+                <div class="tech-stack">
+                    <span class="tech-tag">JSP</span>
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">Oracle</span>
+                    <span class="tech-tag">Apache Tomcat</span>
+                    <span class="tech-tag">Spring Boot</span>
+                    <span class="tech-tag">Mybatis</span>
+                </div>
+            </div>
+
+            <!-- GitHub Link -->
+            <a href="https://github.com/20200961/GYMHUB" class="github-button">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                     <path d="M10.0001 1.66667C5.40508 1.66667 1.66675 5.40501 1.66675 10C1.66675 13.6917 4.05425 16.8142 7.36591 17.9792C7.78175 18.0517 7.93425 17.8008 7.93425 17.5833C7.93425 17.3867 7.92591 16.7625 7.92175 16.1058C5.48091 16.6058 5.00175 15.0442 5.00175 15.0442C4.62175 14.0192 4.08091 13.77 4.08091 13.77C3.34091 13.2558 4.13508 13.2658 4.13508 13.2658C4.95091 13.3225 5.38091 14.1167 5.38091 14.1167C6.10508 15.3725 7.27591 15.0142 7.95091 14.8033C8.02425 14.2692 8.23508 13.9117 8.46925 13.705C6.48425 13.4958 4.39675 12.7133 4.39675 9.41417C4.39675 8.44584 4.71925 7.65417 5.39758 7.03334C5.31091 6.82501 5.03175 5.90584 5.48091 4.78084C5.48091 4.78084 6.16091 4.56084 7.91258 5.74917C8.56258 5.56667 9.28425 5.47584 10.0001 5.47251C10.7159 5.47584 11.4376 5.56667 12.0876 5.74917C13.8392 4.56084 14.5192 4.78084 14.5192 4.78084C14.9684 5.90584 14.6892 6.82501 14.6026 7.03334C15.2809 7.65417 15.6026 8.44584 15.6026 9.41417C15.6026 12.7208 13.5134 13.4925 11.5242 13.6975C11.8059 13.9475 12.0801 14.4417 12.0801 15.1958C12.0801 16.2633 12.0717 17.1167 12.0717 17.5833C12.0717 17.8017 12.2217 18.0542 12.6417 17.9783C15.9484 16.8117 18.3334 13.6908 18.3334 10C18.3334 5.40501 14.5942 1.66667 10.0001 1.66667Z" fill="white"/>
                 </svg>

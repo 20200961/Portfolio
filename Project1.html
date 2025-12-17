@@ -3,177 +3,375 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>손수잇다 - 프로젝트</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>하이 한국 - 프로젝트 상세</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             font-family: Arial, sans-serif;
             background: white;
             overflow-x: hidden;
         }
+
+        .container {
+            max-width: 1014px;
+            margin: 0 auto;
+            background: white;
+        }
+
+        /* Header Section */
+        .header-section {
+            background: #f9fafb;
+            height: 314px;
+            padding: 48px 59px;
+        }
+
+        .back-button {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #6a7282;
+            font-size: 16px;
+            text-decoration: none;
+            margin-bottom: 32px;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            color: #101828;
+        }
+
+        .back-button svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .project-category {
+            display: inline-block;
+            background: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            color: #6a7282;
+            font-size: 16px;
+            margin-bottom: 32px;
+        }
+
+        .project-title {
+            font-size: 40px;
+            color: #101828;
+            line-height: 60px;
+            margin-bottom: 16px;
+        }
+
+        .project-subtitle {
+            font-size: 20px;
+            color: #4a5565;
+            line-height: 30px;
+        }
+
+        /* Content Section */
+        .content-section {
+            padding: 64px 59px 100px;
+        }
+
+        /* Project Image */
+        .project-image-container {
+            width: 100%;
+            max-width: 896px;
+            height: 400px;
+            background: #e5e7eb;
+            border-radius: 14px;
+            margin: 0 auto 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image-placeholder {
+            text-align: center;
+            color: #6a7282;
+        }
+
+        .image-placeholder svg {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 16px;
+        }
+
+        /* Project Info Grid */
+        .project-info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-bottom: 64px;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 12px;
+        }
+
+        .info-icon {
+            width: 44px;
+            height: 44px;
+            background: #f9fafb;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .info-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .info-content h3 {
+            font-size: 16px;
+            color: #101828;
+            margin-bottom: 4px;
+        }
+
+        .info-content p {
+            font-size: 16px;
+            color: #6a7282;
+            line-height: 1.5;
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 64px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            color: #101828;
+            line-height: 36px;
+            margin-bottom: 24px;
+        }
+
+        .section-text {
+            font-size: 16px;
+            color: #4a5565;
+            line-height: 26px;
+        }
+
+        /* Features List */
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .feature-item {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .feature-number {
+            width: 24px;
+            height: 24px;
+            background: #101828;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .feature-text {
+            font-size: 16px;
+            color: #101828;
+            line-height: 24px;
+        }
+
+        /* Tech Stack */
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .tech-tag {
+            background: #101828;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 10px;
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        /* GitHub Button */
+        .github-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #101828;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 16px;
+            line-height: 24px;
+            transition: background 0.2s;
+        }
+
+        .github-button:hover {
+            background: #2d3748;
+        }
+
+        .github-button svg {
+            width: 20px;
+            height: 20px;
+        }
     </style>
 </head>
 <body>
-    <!-- Header Container -->
-    <div style="background: #f9fafb; height: 314px; position: relative; width: 100%;">
-        <!-- Back Button -->
-        <div style="position: absolute; left: 59px; top: 48px; display: flex; align-items: center; gap: 8px;">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M15.8333 10H4.16667M4.16667 10L10 15.8333M4.16667 10L10 4.16667" stroke="#6A7282" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <p style="color: #6a7282; font-size: 16px; line-height: 24px;">돌아가기</p>
-        </div>
-
-        <!-- Tag -->
-        <div style="position: absolute; left: 59px; top: 104px; background: white; border-radius: 20px; padding: 6px 16px;">
-            <p style="color: #6a7282; font-size: 16px; line-height: 24px;">AI</p>
-        </div>
-
-        <!-- Heading -->
-        <div style="position: absolute; left: 59px; top: 160px;">
-            <p style="color: #101828; font-size: 40px; line-height: 60px;">손수잇다</p>
-        </div>
-
-        <!-- Subtitle -->
-        <div style="position: absolute; left: 59px; top: 236px;">
-            <p style="color: #4a5565; font-size: 20px; line-height: 30px;">온라인 수어 교육 플랫폼</p>
-        </div>
-    </div>
-
-    <!-- Main Content Container -->
-    <div style="position: relative; padding: 0 59px; margin-top: 64px;">
-        
-        <!-- Project Image -->
-        <div style="background: #e5e7eb; border-radius: 14px; height: 400px; margin-bottom: 48px; display: flex; align-items: center; justify-content: center; position: relative;">
-            <div style="text-align: center;">
-                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" style="margin: 0 auto 16px;">
-                    <path d="M56 26.6667V37.3333C56 48 48 56 37.3333 56H26.6667C16 56 8 48 8 37.3333V26.6667C8 16 16 8 26.6667 8H37.3333C48 8 56 16 56 26.6667Z" stroke="#6A7282" stroke-width="5.33333" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M22.6667 29.3333L32 38.6667L45.3333 25.3333" stroke="#6A7282" stroke-width="5.33333" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <p style="color: #6a7282; font-size: 16px; line-height: 24px;">프로젝트 이미지</p>
-            </div>
-        </div>
-
-        <!-- Project Info Grid -->
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-bottom: 64px;">
-            <!-- 프로젝트 기간 -->
-            <div style="display: flex; gap: 12px;">
-                <div style="background: #f9fafb; border-radius: 10px; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path d="M6.66667 1.66667V4.16667M13.3333 1.66667V4.16667M2.91667 7.575H17.0833M17.5 7.08333V14.1667C17.5 16.6667 16.25 18.3333 13.3333 18.3333H6.66667C3.75 18.3333 2.5 16.6667 2.5 14.1667V7.08333C2.5 4.58333 3.75 2.91667 6.66667 2.91667H13.3333C16.25 2.91667 17.5 4.58333 17.5 7.08333Z" stroke="#101828" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M13.0787 11.4167H13.0862M13.0787 13.9167H13.0862M9.99623 11.4167H10.0037M9.99623 13.9167H10.0037M6.91209 11.4167H6.91957M6.91209 13.9167H6.91957" stroke="#101828" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <div>
-                    <p style="color: #101828; font-size: 16px; line-height: 24px; margin-bottom: 4px;">프로젝트 기간</p>
-                    <p style="color: #6a7282; font-size: 16px; line-height: 24px;">2024.09 - 2025.09 (12개월)</p>
-                </div>
-            </div>
-
-            <!-- 팀 구성 -->
-            <div style="display: flex; gap: 12px;">
-                <div style="background: #f9fafb; border-radius: 10px; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path d="M7.63333 9.05833C7.55 9.05 7.45 9.05 7.35833 9.05833C5.375 8.99167 3.8 7.36667 3.8 5.36667C3.8 3.325 5.45 1.66667 7.5 1.66667C9.54167 1.66667 11.2 3.325 11.2 5.36667C11.1917 7.36667 9.61667 8.99167 7.63333 9.05833Z" stroke="#101828" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M13.675 3.33333C15.2917 3.33333 16.5917 4.64167 16.5917 6.25C16.5917 7.825 15.3417 9.10833 13.7833 9.16667C13.7167 9.15833 13.6417 9.15833 13.5667 9.16667" stroke="#101828" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M3.46667 12.1333C1.45 13.4833 1.45 15.6833 3.46667 17.025C5.75833 18.5583 9.51667 18.5583 11.8083 17.025C13.825 15.675 13.825 13.475 11.8083 12.1333C9.525 10.6083 5.76667 10.6083 3.46667 12.1333Z" stroke="#101828" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M15.2833 16.6667C15.8833 16.5417 16.45 16.3 16.9167 15.9417C18.2167 14.9667 18.2167 13.3583 16.9167 12.3833C16.4583 12.0333 15.9 11.8 15.3083 11.6667" stroke="#101828" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <div>
-                    <p style="color: #101828; font-size: 16px; line-height: 24px; margin-bottom: 4px;">팀 구성</p>
-                    <p style="color: #6a7282; font-size: 16px; line-height: 24px;">프론트엔드 2명, 백엔드 1명, AI 1명</p>
-                </div>
-            </div>
-
-            <!-- 담당 역할 -->
-            <div style="display: flex; gap: 12px;">
-                <div style="background: #f9fafb; border-radius: 10px; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path d="M5 10H15M5 5H15M5 15H11.6667" stroke="#101828" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <div>
-                    <p style="color: #101828; font-size: 16px; line-height: 24px; margin-bottom: 4px;">담당 역할</p>
-                    <p style="color: #6a7282; font-size: 16px; line-height: 24px;">AI 개발 - 수어인식모델 개발 및 프론트엔드 연결</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- 프로젝트 소개 -->
-        <div style="margin-bottom: 64px;">
-            <h2 style="color: #101828; font-size: 24px; line-height: 36px; margin-bottom: 24px;">프로젝트 소개</h2>
-            <div style="color: #4a5565; font-size: 16px; line-height: 26px;">
-                <p>손수잇다는 AI 기술을 활용하여 누구나 쉽게 수어를 배울 수 있는 온라인 교육 플랫폼입니다.</p>
-                <p>&nbsp;</p>
-                <p>실시간 손동작 인식 기술을 통해 학습자가 올바른 수어 동작을 하고 있는지 즉각적으로 피드백을 제공하며, 단계별 학습</p>
-                <p>커리큘럼을 통해 체계적인 학습이 가능합니다.</p>
-                <p>&nbsp;</p>
-                <p>청각 장애인과 비장애인 간의 소통 장벽을 낮추고, 수어에 대한 접근성을 높이는 것을 목표로 개발되었습니다.</p>
-            </div>
-        </div>
-
-        <!-- 주요 기능 -->
-        <div style="margin-bottom: 64px;">
-            <h2 style="color: #101828; font-size: 24px; line-height: 36px; margin-bottom: 24px;">주요 기능</h2>
-            <div style="display: flex; flex-direction: column; gap: 16px;">
-                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 10px; padding: 25px;">
-                    <div style="display: flex; align-items: center; gap: 11px;">
-                        <div style="background: #101828; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px;">1</div>
-                        <p style="color: #101828; font-size: 16px; line-height: 24px;">AI 기반 실시간 손동작 인식 및 정확도 분석</p>
-                    </div>
-                </div>
-                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 10px; padding: 25px;">
-                    <div style="display: flex; align-items: center; gap: 11px;">
-                        <div style="background: #101828; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px;">2</div>
-                        <p style="color: #101828; font-size: 16px; line-height: 24px;">단계별 수어 학습 커리큘럼 및 진도 관리</p>
-                    </div>
-                </div>
-                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 10px; padding: 25px;">
-                    <div style="display: flex; align-items: center; gap: 11px;">
-                        <div style="background: #101828; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px;">3</div>
-                        <p style="color: #101828; font-size: 16px; line-height: 24px;">학습 성취도 통계 및 개인별 맞춤 학습 추천</p>
-                    </div>
-                </div>
-                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 10px; padding: 25px;">
-                    <div style="display: flex; align-items: center; gap: 11px;">
-                        <div style="background: #101828; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px;">4</div>
-                        <p style="color: #101828; font-size: 16px; line-height: 24px;">수어 사전 기능 - 단어 및 문장 검색</p>
-                    </div>
-                </div>
-                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 10px; padding: 25px;">
-                    <div style="display: flex; align-items: center; gap: 11px;">
-                        <div style="background: #101828; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px;">5</div>
-                        <p style="color: #101828; font-size: 16px; line-height: 24px;">웹과 모바일 앱 기반의 통합 플랫폼</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 기술 스택 -->
-        <div style="margin-bottom: 64px;">
-            <h2 style="color: #101828; font-size: 24px; line-height: 36px; margin-bottom: 24px;">기술 스택</h2>
-            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                <div style="background: #101828; color: white; padding: 8px 16px; border-radius: 10px; font-size: 16px; line-height: 24px;">Python</div>
-                <div style="background: #101828; color: white; padding: 8px 16px; border-radius: 10px; font-size: 16px; line-height: 24px;">TensorFlow</div>
-                <div style="background: #101828; color: white; padding: 8px 16px; border-radius: 10px; font-size: 16px; line-height: 24px;">React Native</div>
-                <div style="background: #101828; color: white; padding: 8px 16px; border-radius: 10px; font-size: 16px; line-height: 24px;">Flask</div>
-                <div style="background: #101828; color: white; padding: 8px 16px; border-radius: 10px; font-size: 16px; line-height: 24px;">MySQL</div>
-                <div style="background: #101828; color: white; padding: 8px 16px; border-radius: 10px; font-size: 16px; line-height: 24px;">AWS</div>
-                <div style="background: #101828; color: white; padding: 8px 16px; border-radius: 10px; font-size: 16px; line-height: 24px;">MediaPipe</div>
-                <div style="background: #101828; color: white; padding: 8px 16px; border-radius: 10px; font-size: 16px; line-height: 24px;">Node.js</div>
-            </div>
-        </div>
-
-        <!-- GitHub Link -->
-        <div style="margin-bottom: 64px;">
-            <a href="#" style="background: #101828; color: white; padding: 12px 24px; border-radius: 10px; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-size: 16px; line-height: 24px;">
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header-section">
+            <a href="index.html" class="back-button">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M15.8333 10H4.16667M4.16667 10L10 15.8333M4.16667 10L10 4.16667" stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                돌아가기
+            </a>
+            <div class="project-category">BackEnd</div>
+            <h1 class="project-title">하이 한국</h1>
+            <p class="project-subtitle">외국인 대상 여행지 추천 하이브리드 앱</p>
+        </div>
+
+        <!-- Content Section -->
+        <div class="content-section">
+            <!-- Project Image -->
+            <div class="project-image-container">
+                <div class="image-placeholder">
+                    <svg fill="none" viewBox="0 0 64 64">
+                        <path d="M42.6667 48L58.6667 32L42.6667 16" stroke="#6A7282" stroke-width="5.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M21.3333 16L5.33333 32L21.3333 48" stroke="#6A7282" stroke-width="5.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <p>프로젝트 이미지</p>
+                </div>
+            </div>
+
+            <!-- Project Info Grid -->
+            <div class="project-info-grid">
+                <div class="info-item">
+                    <div class="info-icon">
+                        <svg fill="none" viewBox="0 0 20 20">
+                            <path d="M6.66667 1.66667V4.16667M13.3333 1.66667V4.16667M2.91667 7.575H17.0833M17.5 7.08333V14.1667C17.5 16.6667 16.25 18.3333 13.3333 18.3333H6.66667C3.75 18.3333 2.5 16.6667 2.5 14.1667V7.08333C2.5 4.58333 3.75 2.91667 6.66667 2.91667H13.3333C16.25 2.91667 17.5 4.58333 17.5 7.08333Z" stroke="#101828" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M13.0787 11.4167H13.0862M13.0787 13.9167H13.0862M9.99623 11.4167H10.0037M9.99623 13.9167H10.0037M6.91209 11.4167H6.91957M6.91209 13.9167H6.91957" stroke="#101828" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="info-content">
+                        <h3>프로젝트 기간</h3>
+                        <p>2024.05 - 2024.07 (2개월)</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">
+                        <svg fill="none" viewBox="0 0 20 20">
+                            <path d="M7.63333 9.05833C7.55 9.05 7.45 9.05 7.35833 9.05833C5.375 8.99167 3.8 7.36667 3.8 5.36667C3.8 3.325 5.45 1.66667 7.5 1.66667C9.54167 1.66667 11.2 3.325 11.2 5.36667C11.1917 7.36667 9.61667 8.99167 7.63333 9.05833Z" stroke="#101828" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M13.675 3.33333C15.2917 3.33333 16.5917 4.64167 16.5917 6.25C16.5917 7.825 15.3417 9.10833 13.7833 9.16667C13.7167 9.15833 13.6417 9.15833 13.5667 9.16667" stroke="#101828" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3.46667 12.1333C1.45 13.4833 1.45 15.6833 3.46667 17.025C5.75833 18.5583 9.51667 18.5583 11.8083 17.025C13.825 15.675 13.825 13.475 11.8083 12.1333C9.525 10.6083 5.76667 10.6083 3.46667 12.1333Z" stroke="#101828" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M15.2833 16.6667C15.8833 16.5417 16.45 16.3 16.9167 15.9417C18.2167 14.9667 18.2167 13.3583 16.9167 12.3833C16.4583 12.0333 15.9 11.8 15.3083 11.6667" stroke="#101828" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="info-content">
+                        <h3>팀 구성</h3>
+                        <p>프론트엔드 3명, 백엔드 2명</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">
+                        <svg fill="none" viewBox="0 0 20 20">
+                            <path d="M5 10H15M5 5H15M5 15H11.6667" stroke="#101828" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="info-content">
+                        <h3>담당 역할</h3>
+                        <p>백엔드 개발 - API 설계,<br>데이터베이스 관리,<br>백엔드 로직 구현</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Introduction -->
+            <div class="section">
+                <h2 class="section-title">프로젝트 소개</h2>
+                <div class="section-text">
+                    <p>하이 한국은 한국을 방문하는 외국인 여행객들을 위한 맞춤형 여행지 추천 앱입니다.</p>
+                    <br>
+                    <p>사용자의 관심사와 위치 정보를 기반으로 개인화된 여행지를 추천하며, 실시간 번역, 교통편 안내, 주변 맛집 정보 등 여행에 필요한 모든 정보를 제공합니다.</p>
+                    <br>
+                    <p>다국어 지원과 직관적인 UI로 언어 장벽 없이 누구나 쉽게 사용할 수 있습니다.</p>
+                </div>
+            </div>
+
+            <!-- Key Features -->
+            <div class="section">
+                <h2 class="section-title">주요 기능</h2>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="feature-number">1</div>
+                        <div class="feature-text">AI 기반 개인 맞춤형 여행지 추천 알고리즘</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-number">2</div>
+                        <div class="feature-text">실시간 다국어 번역 및 음성 인식 기능</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-number">3</div>
+                        <div class="feature-text">GPS 기반 주변 관광지, 맛집, 숙소 정보 제공</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-number">4</div>
+                        <div class="feature-text">여행 일정 플래너 및 경로 최적화</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-number">5</div>
+                        <div class="feature-text">사용자 리뷰 및 평점 시스템</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-number">6</div>
+                        <div class="feature-text">오프라인 지도 및 즐겨찾기 기능</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tech Stack -->
+            <div class="section">
+                <h2 class="section-title">기술 스택</h2>
+                <div class="tech-stack">
+                    <span class="tech-tag">React Native</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Express</span>
+                    <span class="tech-tag">MySQL</span>
+                    <span class="tech-tag">Google Maps API</span>
+                    <span class="tech-tag">AWS</span>
+                </div>
+            </div>
+
+            <!-- GitHub Link -->
+            <a href="#" class="github-button">
+                <svg fill="none" viewBox="0 0 20 20">
                     <path d="M10.0001 1.66667C5.40508 1.66667 1.66675 5.40501 1.66675 10C1.66675 13.6917 4.05425 16.8142 7.36591 17.9792C7.78175 18.0517 7.93425 17.8008 7.93425 17.5833C7.93425 17.3867 7.92591 16.7625 7.92175 16.1058C5.48091 16.6058 5.00175 15.0442 5.00175 15.0442C4.62175 14.0192 4.08091 13.77 4.08091 13.77C3.34091 13.2558 4.13508 13.2658 4.13508 13.2658C4.95091 13.3225 5.38091 14.1167 5.38091 14.1167C6.10508 15.3725 7.27591 15.0142 7.95091 14.8033C8.02425 14.2692 8.23508 13.9117 8.46925 13.705C6.48425 13.4958 4.39675 12.7133 4.39675 9.41417C4.39675 8.44584 4.71925 7.65417 5.39758 7.03334C5.31091 6.82501 5.03175 5.90584 5.48091 4.78084C5.48091 4.78084 6.16091 4.56084 7.91258 5.74917C8.56258 5.56667 9.28425 5.47584 10.0001 5.47251C10.7159 5.47584 11.4376 5.56667 12.0876 5.74917C13.8392 4.56084 14.5192 4.78084 14.5192 4.78084C14.9684 5.90584 14.6892 6.82501 14.6026 7.03334C15.2809 7.65417 15.6026 8.44584 15.6026 9.41417C15.6026 12.7208 13.5134 13.4925 11.5242 13.6975C11.8059 13.9475 12.0801 14.4417 12.0801 15.1958C12.0801 16.2633 12.0717 17.1167 12.0717 17.5833C12.0717 17.8017 12.2217 18.0542 12.6417 17.9783C15.9484 16.8117 18.3334 13.6908 18.3334 10C18.3334 5.40501 14.5942 1.66667 10.0001 1.66667Z" fill="white"/>
                 </svg>
                 GitHub 보기
